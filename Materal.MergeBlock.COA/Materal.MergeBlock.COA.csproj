@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="../../MergeBlockLibrary.props" />
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+		<Title>Materal MergeBlock包</Title>
+		<Description>Materal MergeBlock证书授权模块</Description>
+	</PropertyGroup>
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Materal.Abstractions\Materal.Abstractions\Materal.Abstractions.csproj" />
+	  <ProjectReference Include="..\Materal.COA\Materal.COA.csproj" />
+	  <ProjectReference Include="..\..\Materal.Extensions\Materal.Extensions.DependencyInjection\Materal.Extensions.DependencyInjection.csproj" />
+	  <ProjectReference Include="..\..\Materal.MergeBlock\Materal.MergeBlock.Web.Abstractions\Materal.MergeBlock.Web.Abstractions.csproj" />
+	  <ProjectReference Include="..\..\Materal.Utils\Materal.Utils\Materal.Utils.csproj" />
+	</ItemGroup>
+</Project>
