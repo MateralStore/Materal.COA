@@ -1,12 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	<Import Project="../../Packable.props" />
+	<Import Project="..\..\Common.props" />
 	<PropertyGroup>
 		<TargetFrameworks>netstandard2.0;netstandard2.1;net8.0;net9.0;net10.0</TargetFrameworks>
-		<Title>Materal-授权证书包</Title>
-		<Description>Materal授权证书包</Description>
 	</PropertyGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Materal.Extensions\Materal.Extensions\Materal.Extensions.csproj" />
 	  <ProjectReference Include="..\..\Materal.Utils\Materal.Utils.Crypto\Materal.Utils.Crypto.csproj" />
+	  <ProjectReference Include="..\Materal.COA\Materal.COA.csproj" />
 	</ItemGroup>
 </Project>

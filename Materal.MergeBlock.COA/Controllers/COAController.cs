@@ -15,14 +15,7 @@ namespace Materal.MergeBlock.COA.Controllers
         [HttpGet, AllowAnonymous]
         public ResultModel<COAResultDTO> GetCOAState()
         {
-            COAResultDTO result = new()
-            {
-                IsValidity = coaService.VerifyCertificatesAuthorization(out DateTimeOffset? endDate)
-            };
-            if (endDate is not null)
-            {
-                result.EndDate = endDate.Value;
-            }
+            COAResultDTO result = coaService.VerifyCertificatesAuthorization();
             return ResultModel<COAResultDTO>.Success(result, "获取成功");
         }
     }

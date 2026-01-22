@@ -15,6 +15,7 @@ namespace Materal.MergeBlock.COA
         public override void OnConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.TryAddSingleton<ICOAService, COAService>();
+            context.Services.TryAddSingleton<ICertificateVerificationService, CertificateVerificationService>();
             base.OnConfigureServices(context);
         }
         /// <summary>
@@ -24,23 +25,16 @@ namespace Materal.MergeBlock.COA
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
             ICOAService coaService = context.ServiceProvider.GetRequiredService<ICOAService>();
-            COAResultDTO dto = new()
-            {
-                IsValidity = coaService.VerifyCertificatesAuthorization(out DateTimeOffset? endDate)
-            };
-            if (endDate is not null)
-            {
-                dto.EndDate = endDate.Value;
-            }
+            COAResultDTO dto = coaService.VerifyCertificatesAuthorization();
             if (dto.IsValidity) return;
-            ILogger logger = context.ServiceProvider.GetRequiredService<ILogger<COAModule>>();
-            if (endDate is null)
+            ILogger? logger = context.ServiceProvider.GetService<ILogger<COAModule>>();
+            if (dto.EndDate is null)
             {
-                logger.LogWarning("证书授权已过期");
+                logger?.LogWarning("证书授权已过期");
             }
             else
             {
-                logger.LogWarning($"证书授权已过期{dto.ExpirationDays}天");
+                logger?.LogWarning($"证书授权已过期{dto.ExpirationDays}天");
             }
         }
     }
