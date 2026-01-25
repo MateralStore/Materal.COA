@@ -6,7 +6,6 @@
 		<Description>Materal授权证书包</Description>
 	</PropertyGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Materal.Extensions\Materal.Extensions\Materal.Extensions.csproj" />
 	  <ProjectReference Include="..\..\Materal.Utils\Materal.Utils.Crypto\Materal.Utils.Crypto.csproj" />
 	</ItemGroup>
 </Project>

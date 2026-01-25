@@ -1,22 +1,20 @@
-﻿using Materal.Utils.Model;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 
-namespace Materal.MergeBlock.COA.Controllers
+namespace Materal.MergeBlock.COA.Controllers;
+
+/// <summary>
+/// 枚举控制器
+/// </summary>
+public class COAController(ICOAService coaService) : COAControllerBase
 {
     /// <summary>
-    /// 枚举控制器
+    /// 获取证书授权状态
     /// </summary>
-    public class COAController(ICOAService coaService) : COAControllerBase
+    /// <returns></returns>
+    [HttpGet, AllowAnonymous]
+    public ResultModel<COAResultDTO> GetCOAState()
     {
-        /// <summary>
-        /// 获取证书授权状态
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet, AllowAnonymous]
-        public ResultModel<COAResultDTO> GetCOAState()
-        {
-            COAResultDTO result = coaService.VerifyCertificatesAuthorization();
-            return ResultModel<COAResultDTO>.Success(result, "获取成功");
-        }
+        COAResultDTO result = coaService.VerifyCertificatesAuthorization();
+        return ResultModel<COAResultDTO>.Success(result, "获取成功");
     }
 }
