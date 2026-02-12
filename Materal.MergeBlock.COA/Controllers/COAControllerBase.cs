@@ -1,4 +1,4 @@
-﻿using Materal.MergeBlock.Web.Abstractions.Controllers;
+using Materal.MergeBlock.Web.Abstractions.Controllers;
 
 namespace Materal.MergeBlock.COA.Controllers;
 

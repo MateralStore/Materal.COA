@@ -1,4 +1,4 @@
-﻿namespace Materal.MergeBlock.COA;
+namespace Materal.MergeBlock.COA;
 
 /// <summary>
 /// 证书授权服务

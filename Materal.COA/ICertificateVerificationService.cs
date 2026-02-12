@@ -1,4 +1,4 @@
-﻿namespace Materal.COA;
+namespace Materal.COA;
 
 /// <summary>
 /// 证书验证服务

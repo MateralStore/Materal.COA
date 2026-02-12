@@ -1,4 +1,4 @@
-﻿namespace Materal.COA.Generator;
+namespace Materal.COA.Generator;
 
 /// <summary>
 /// 证书生成选项

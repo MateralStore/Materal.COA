@@ -1,4 +1,4 @@
-﻿namespace Materal.MergeBlock.COA;
+namespace Materal.MergeBlock.COA;
 
 /// <summary>
 /// COA返回数据传输模型

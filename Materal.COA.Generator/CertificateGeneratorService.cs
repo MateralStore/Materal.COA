@@ -1,4 +1,4 @@
-﻿using Materal.Utils.Crypto;
+using Materal.Utils.Crypto;
 using System.Text;
 using System.Text.Json;
 
